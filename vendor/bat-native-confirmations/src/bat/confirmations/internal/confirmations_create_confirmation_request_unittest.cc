@@ -32,7 +32,8 @@ class ConfirmationsCreateConfirmationRequestTest : public ::testing::Test {
       mock_confirmations_client_(std::make_unique<MockConfirmationsClient>()),
       confirmations_(std::make_unique<ConfirmationsImpl>(
           mock_confirmations_client_.get())),
-      request_(std::make_unique<CreateConfirmationRequest>()) {
+      request_(std::make_unique<CreateConfirmationRequest>(
+          confirmations_.get())) {
     // You can do set-up work for each test here
   }
 
