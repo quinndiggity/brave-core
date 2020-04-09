@@ -97,6 +97,10 @@ export const generateGridSitesFromLegacyEntries = (
   }
 
   for (const topSite of legacyTopSites) {
+    if (topSite == null) {
+      continue
+    }
+
     newGridSites
       .push(generateGridSiteProperties(topSite.index, topSite, true))
   }
